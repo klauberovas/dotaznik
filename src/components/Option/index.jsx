@@ -1,11 +1,17 @@
 import { Icon } from '../Icon/index';
 import './style.css';
 
-export const Option = (props) => {
+export const Option = ({ type, text, onSelected }) => {
   return (
-    <div className="option">
-      <Icon type={props.type} />
-      <div>{props.text}</div>
+    <div
+      onClick={() => {
+        console.log(text);
+        onSelected(type);
+      }}
+      className="option"
+    >
+      <Icon type={type} />
+      <div>{text}</div>
     </div>
   );
 };
